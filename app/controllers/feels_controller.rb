@@ -4,7 +4,7 @@ class FeelsController < ApplicationController
   # GET /feels
   # GET /feels.json
   def index
-    @feels = Feel.all
+    @feels = Feel.order(date: :asc)
   end
 
   # GET /feels/new
@@ -23,7 +23,7 @@ class FeelsController < ApplicationController
 
     respond_to do |format|
       if @feel.save
-        format.html { redirect_to @feel, notice: 'Feel was successfully created.' }
+        format.html { redirect_to feels_path, notice: 'Feel was successfully created.' }
         format.json { render :show, status: :created, location: @feel }
       else
         format.html { render :new }
