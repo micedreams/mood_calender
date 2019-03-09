@@ -18,8 +18,7 @@
         <td><%= feel.date %></td>
         <td><%= feel.mood %></td>
         <td><%= feel.note %></td>
-        <td><%= link_to 'Show', feel %></td>
-        <td><%= link_to 'Edit', edit_feel_path(feel) %></td>
+          <td><%= link_to 'Edit', edit_feel_path(feel) %></td>
         <td><%= link_to 'Destroy', feel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

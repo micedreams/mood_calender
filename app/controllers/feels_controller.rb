@@ -7,11 +7,6 @@ class FeelsController < ApplicationController
     @feels = Feel.all
   end
 
-  # GET /feels/1
-  # GET /feels/1.json
-  def show
-  end
-
   # GET /feels/new
   def new
     @feel = Feel.new
