@@ -1,0 +1,32 @@
+<%= form_with(model: feel, local: true) do |form| %>
+  <% if feel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(feel.errors.count, "error") %> prohibited this feel from being saved:</h2>
+
+      <ul>
+      <% feel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :feel_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mood %>
+    <%= form.number_field :mood, id: :feel_mood %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_field :note, id: :feel_note %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
